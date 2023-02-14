@@ -1,19 +1,11 @@
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 // import img2 from "./img/img1.jpg";
-import {
-  Navbar,
-  Container,
-  Nav,
-  Row,
-  Col,
-  Card,
-  Button,
-} from "react-bootstrap/";
-import { data } from "./data/dataInfo";
+import { Navbar, Container, Nav, Row } from "react-bootstrap/";
 import { useState } from "react";
+import CardCompont from "./components/CardCompont";
 
-function App() {
+function App({ data }) {
   const [shoes] = useState(data);
 
   return (
@@ -34,28 +26,8 @@ function App() {
       ></div>
       <Container>
         <Row>
-          {shoes.map((data) => (
-            // <Col key={data.id}>
-            //   <img
-            //     src="https://codingapple1.github.io/shop/shoes2.jpg"
-            //     style={{ width: "100%" }}
-            //   />
-            //   <h4>{data.title}</h4>
-            //   <p>{data.content}</p>
-            //   <p>{data.price}</p>
-            // </Col>
-            <Card key={data.id} style={{ width: "18rem" }}>
-              <Card.Img
-                variant="top"
-                src="https://codingapple1.github.io/shop/shoes2.jpg"
-              />
-              <Card.Body>
-                <Card.Title>{data.title}</Card.Title>
-                <Card.Text>{data.content}</Card.Text>
-                <Card.Text>{data.price}</Card.Text>
-                <Button variant="primary">Go somewhere</Button>
-              </Card.Body>
-            </Card>
+          {shoes.map((item) => (
+            <CardCompont item={item} key={item.id}></CardCompont>
           ))}
         </Row>
       </Container>
