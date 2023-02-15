@@ -31,14 +31,14 @@ const data = [
   },
   {
     id: 5,
-    title: "test",
-    content: "AAAAA",
+    title: "test2",
+    content: "SOSOA",
     price: 123123,
   },
   {
     id: 6,
-    title: "test",
-    content: "AAAAA",
+    title: "test3",
+    content: "AGGG",
     price: 123123,
   },
 ];
