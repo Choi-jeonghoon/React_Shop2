@@ -1,11 +1,11 @@
-import "./App.css";
+import "../App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-// import img2 from "./img/img1.jpg";
 import { Navbar, Container, Nav, Row } from "react-bootstrap/";
 import { useState } from "react";
-import CardCompont from "./components/CardCompont";
+import CardCompont from "../components/CardCompont";
+import { data } from "../data/dataInfo";
 
-function App({ data }) {
+function MainPage() {
   const [shoes] = useState(data);
 
   return (
@@ -20,10 +20,7 @@ function App({ data }) {
           </Nav>
         </Container>
       </Navbar>
-      <div
-        className="main-bg"
-        // style={{ backgroundImage: "url(" + img2 + ")" }}
-      ></div>
+      <div className="main-bg"></div>
       <Container>
         <Row>
           {shoes.map((item) => (
@@ -35,4 +32,4 @@ function App({ data }) {
   );
 }
 
-export default App;
+export default MainPage;
